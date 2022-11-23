@@ -19,7 +19,7 @@
       Dashboard
     </a>
     <a
-      href="publish"
+      href="Publish"
       class="flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium text-white hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
