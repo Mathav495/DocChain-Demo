@@ -98,6 +98,10 @@ import Pagination from "./componants/pagination.svelte"
       </div>
       <div>
         <div class="mb-3 text-xl">Documents</div>
+        <div
+          class="flex h-32 w-full items-end justify-center rounded-md bg-white/10 shadow-sm shadow-red-600">
+          <Pagination />
+        </div>
       </div>
     </div>
   </div>
