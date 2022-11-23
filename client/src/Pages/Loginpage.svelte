@@ -1,5 +1,7 @@
 <script>
   import axios from "axios"
+  import { createEventDispatcher } from "svelte"
+  const dispatch = createEventDispatcher()
   let Email, password
   const onLogin = async () => {
     console.log(Email)
@@ -17,6 +19,7 @@
     localStorage.setItem("token", data.token)
     let token = localStorage.getItem("token")
     console.log(token)
+    dispatch("token", token)
   }
 </script>
 
