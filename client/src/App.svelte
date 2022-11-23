@@ -3,11 +3,16 @@
   import Dashboard from "./Pages/Dashboard.svelte"
   import { Route, Router } from "svelte-routing"
   export const url = ""
+  let Token
+  const getToken = (e) => {
+    Token = e.detail
+    console.log(Token)
+  }
 </script>
 
 <Router {url}>
   <main>
-    <Route path="/"><LoginPage /></Route>
+    <Route path="/"><LoginPage on:token={getToken} /></Route>
     <Route path="Dash"><Dashboard /></Route>
   </main>
 </Router>
