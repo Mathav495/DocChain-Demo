@@ -1,26 +1,26 @@
 <script>
-  import axios from "axios"
-  import { createEventDispatcher } from "svelte"
-  const dispatch = createEventDispatcher()
-  let Email, password
-  const onLogin = async () => {
-    console.log(Email)
-    console.log(password)
+import axios from "axios"
+import { createEventDispatcher } from "svelte"
+const dispatch = createEventDispatcher()
+let Email, password
+const onLogin = async () => {
+  console.log(Email)
+  console.log(password)
 
-    let sampleData = {
-      email: Email,
-      password: password,
-    }
-    const { data } = await axios.post(
-      "https://test.swagger.print2block.in/auth/login",
-      sampleData
-    )
-    console.log(data)
-    localStorage.setItem("token", data.token)
-    let token = localStorage.getItem("token")
-    console.log(token)
-    dispatch("token", token)
+  let sampleData = {
+    email: Email,
+    password: password,
   }
+  const { data } = await axios.post(
+    "https://test.swagger.print2block.in/auth/login",
+    sampleData
+  )
+  console.log(data)
+  localStorage.setItem("token", data.token)
+  let token = localStorage.getItem("token")
+  console.log(token)
+  dispatch("token", token)
+}
 </script>
 
 <div class=" flex h-screen w-screen items-center justify-center bg-black">
