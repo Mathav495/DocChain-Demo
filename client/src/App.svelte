@@ -14,7 +14,7 @@ const getToken = (e) => {
 <Router {url}>
   <main>
     <Route path="/"><LoginPage on:token={getToken} /></Route>
-    <Route path="Dash"><Dashboard /></Route>
+    <Route path="Dash"><Dashboard {Token} /></Route>
     <Route path="Publish"><Publishdoc /></Route>
   </main>
 </Router>

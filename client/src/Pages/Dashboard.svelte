@@ -1,6 +1,8 @@
 <script>
 import Header from "./componants/Header.svelte"
 import Navbar from "./componants/Navbar.svelte"
+
+export let Token
 </script>
 
 <div class="h-screen w-screen bg-black text-gray-300">
