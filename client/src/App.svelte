@@ -1,14 +1,16 @@
 <script>
-  export let name
+  import LoginPage from "./Pages/LoginPage.svelte"
+  import Dashboard from "./Pages/Dashboard.svelte"
+  import { Route, Router } from "svelte-routing"
+  export const url = ""
 </script>
 
-<main>
-  <h1 class=" p-6 font-serif text-4xl font-bold text-red-500">Hello {name}!</h1>
-  <p>
-    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-    how to build Svelte apps.
-  </p>
-</main>
+<Router {url}>
+  <main>
+    <Route path="/"><LoginPage /></Route>
+    <Route path="Dash"><Dashboard /></Route>
+  </main>
+</Router>
 
 <style global lang="postcss">
   @tailwind base;
