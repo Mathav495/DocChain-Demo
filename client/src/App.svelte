@@ -1,14 +1,17 @@
 <script>
-	export let name;
+  export let name
 </script>
 
 <main>
-	<h1 class=" text-4xl font-bold font-serif text-red-500">Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <h1 class=" p-6 font-serif text-4xl font-bold text-red-500">Hello {name}!</h1>
+  <p>
+    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
+    how to build Svelte apps.
+  </p>
 </main>
 
 <style global lang="postcss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 </style>
