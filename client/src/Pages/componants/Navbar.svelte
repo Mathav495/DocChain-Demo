@@ -37,7 +37,7 @@
       <span class=" group-hover:text-red-600">Publish Document</span>
     </a>
     <a
-      href="Publish"
+      href="Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@
       <span class=" group-hover:text-red-600">Bulk Upload</span>
     </a>
     <a
-      href="Publish"
+      href="Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@
       <span class=" group-hover:text-red-600">Documents</span>
     </a>
     <a
-      href="Publish"
+      href="Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@
       <span class=" group-hover:text-red-600">Recievers</span>
     </a>
     <a
-      href="Publish"
+      href="Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@
       <span class=" group-hover:text-red-600">Analytics</span>
     </a>
     <a
-      href="Publish"
+      href="Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
