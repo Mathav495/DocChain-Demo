@@ -1,1 +1,1 @@
-<h1 class="text-4xl">login page</h1>
+<h1 class="p-5 text-4xl text-red-500">login page</h1>
