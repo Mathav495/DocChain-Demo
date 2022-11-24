@@ -1,6 +1,13 @@
 <script>
+import { createEventDispatcher } from "svelte"
+const dispatch = createEventDispatcher()
 import Header from "./componants/Header.svelte"
 import Navbar from "./componants/Navbar.svelte"
+let document
+const onsubmit = () => { 
+  console.log(document)
+  dispatch("document",document)
+}
 </script>
 
 <div class="h-screen w-screen bg-black text-gray-300">
@@ -12,8 +19,11 @@ import Navbar from "./componants/Navbar.svelte"
       <div>
         <label for="Doc" class="text-lg text-white">Choose the document to proceed</label>
         <div class="flex mt-4 gap-5">
-          <input type="text" id="Doc" class="w-2/5">
-          <button class="bg-red-500 p-1 text-white">Proceed</button>
+          <input 
+          bind:value={document}
+          type="text" id="Doc" class="w-2/5 text-slate-400 text-lg">
+          <button on:click={onsubmit}
+          class="bg-red-500 p-1 text-white">Proceed</button>
         </div>
       </div>
     </div>

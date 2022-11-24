@@ -4,10 +4,14 @@ import Dashboard from "./Pages/Dashboard.svelte"
 import { Route, Router } from "svelte-routing"
 import Publishdoc from "./Pages/Publishdoc.svelte"
 export const url = ""
-let Token
+let Token, documentType
 const getToken = (e) => {
   Token = e.detail
   console.log(Token)
+}
+const getDocumentType = (e) => {
+  documentType = e.detail
+  console.log(documentType)
 }
 </script>
 
@@ -15,7 +19,7 @@ const getToken = (e) => {
   <main>
     <Route path="/"><LoginPage on:token={getToken} /></Route>
     <Route path="Dash"><Dashboard {Token} /></Route>
-    <Route path="Publish"><Publishdoc /></Route>
+    <Route path="Publish"><Publishdoc on:document={getDocumentType}/></Route>
   </main>
 </Router>
 
