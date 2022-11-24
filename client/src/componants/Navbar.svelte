@@ -1,5 +1,5 @@
 <div class="flex w-1/4 px-5 py-5 lg:w-1/6">
-  <nav class="flex-1 space-y-1 border-r border-red-600 pb-4">
+  <nav class="flex-1 space-y-1 pb-4">
     <a
       href="/Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
