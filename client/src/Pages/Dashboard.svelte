@@ -6,7 +6,6 @@ import Navbar from "../componants/Navbar.svelte"
 import Pagination from "../componants/pagination.svelte"
 let Token = localStorage.getItem("token")
 console.log("token", Token)
-
 onMount(async () => {
   const { data } = await axios.get(
     "http://localhost:5000/account/usage?from=2022-01-01T00%3A00%3A00Z&to=2022-11-15T00%3A00%3A00Z"

@@ -41,7 +41,6 @@ app.post("/*/*", async (req, res) => {
   try {
     console.log(req.path)
     let url = `https://test.swagger.print2block.in${req.path}`
-    console.log(url)
     let sampleData = req.body
     const { data } = await axios.post(url, sampleData)
     Token = data.token
