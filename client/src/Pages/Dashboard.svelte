@@ -14,10 +14,15 @@ onMount(async () => {
   )
   usage = data
   console.log("data", usage)
+  let element = document.getElementById("Load")
+  element.classList.add("hidden")
+  let element2 = document.getElementById("Dashboard")
+  element2.classList.remove("hidden")
+  console.log(element)
 })
 </script>
 
-<div class="h-screen w-screen bg-black text-gray-300">
+<div class="hidden h-screen w-screen bg-black text-gray-300" id="Dashboard">
   <Header />
   <div class="flex flex-row">
     <Navbar />
