@@ -1,19 +1,18 @@
 <script>
-// import axios from "axios"
-// import { onMount } from "svelte"
+import axios from "axios"
+import { onMount } from "svelte"
 import Header from "../componants/header.svelte"
 import Navbar from "../componants/Navbar.svelte"
 import Pagination from "../componants/pagination.svelte"
+let Token = localStorage.getItem("token")
+console.log("token", Token)
 
-// export let Token
-// console.log("token", Token)
-
-// onMount(async () => {
-//   const { data } = await axios.get(
-//     "https://test.swagger.print2block.in/account/usage?from=2022-01-01T00%3A00%3A00Z&to=2022-11-15T00%3A00%3A00Z"
-//   )
-//   console.log("data", data)
-// })
+onMount(async () => {
+  const { data } = await axios.get(
+    "http://localhost:5000/account/usage?from=2022-01-01T00%3A00%3A00Z&to=2022-11-15T00%3A00%3A00Z"
+  )
+  console.log("data", data)
+})
 </script>
 
 <div class="h-screen w-screen bg-black text-gray-300">
@@ -99,7 +98,7 @@ import Pagination from "../componants/pagination.svelte"
       <div>
         <div class="mb-3 text-xl">Documents</div>
         <div
-          class="flex h-32 w-full items-end justify-center rounded-md bg-white/10 shadow-sm shadow-red-600">
+          class="flex h-40 w-full items-end justify-center rounded-md bg-white/10 shadow-sm shadow-red-600">
           <Pagination />
         </div>
       </div>
