@@ -12,7 +12,7 @@ const onLogin = async () => {
     password: password,
   }
   const { data } = await axios.post(
-    "https://test.swagger.print2block.in/auth/login",
+    "http://localhost:5000/auth/login",
     sampleData
   )
   console.log(data)
