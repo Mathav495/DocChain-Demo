@@ -28,7 +28,7 @@ const getDocumentType = (e) => {
 </Router>
 
 <style global lang="postcss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 </style>
