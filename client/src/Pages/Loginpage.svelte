@@ -1,8 +1,6 @@
 <script>
   import axios from "axios"
-  import { createEventDispatcher } from "svelte"
   import { navigate } from "svelte-routing"
-  const dispatch = createEventDispatcher()
   let Email, password
   const onLogin = async () => {
     console.log(Email)
@@ -21,7 +19,6 @@
     let token = localStorage.getItem("token")
     console.log(token)
     if (token) {
-      dispatch("token", token)
       navigate("/Dash")
     }
   }

@@ -1,24 +1,21 @@
 <script>
-  import LoginPage from "./Pages/Loginpage.svelte";
-  import Dashboard from "./Pages/Dashboard.svelte";
-  import { Route, Router } from "svelte-routing";
-  import Publishdoc from "./Pages/Publishdoc.svelte";
-  import AddData from "./Pages/AddData.svelte";
-  export const url = "";
-  let Token, documentType;
-  const getToken = (e) => {
-    Token = e.detail;
-    console.log(Token);
-  };
+  import LoginPage from "./Pages/Loginpage.svelte"
+  import Dashboard from "./Pages/Dashboard.svelte"
+  import { Route, Router } from "svelte-routing"
+  import Publishdoc from "./Pages/Publishdoc.svelte"
+  import AddData from "./Pages/AddData.svelte"
+  export const url = ""
+  let Token, documentType
+
   const getDocumentType = (e) => {
-    documentType = e.detail;
-    console.log(documentType);
-  };
+    documentType = e.detail
+    console.log(documentType)
+  }
 </script>
 
 <Router {url}>
   <main>
-    <Route path="/"><LoginPage on:token={getToken} /></Route>
+    <Route path="/"><LoginPage /></Route>
     <Route path="Dash"><Dashboard {Token} /></Route>
     <Route path="Publish"><Publishdoc on:document={getDocumentType} /></Route>
     <Route path="/user">
