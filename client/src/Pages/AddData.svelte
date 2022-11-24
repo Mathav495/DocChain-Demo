@@ -1,6 +1,6 @@
 <script>
-import Header from "./componants/Header.svelte"
-import Navbar from "./componants/Navbar.svelte"
+import Header from "../componants/header.svelte"
+import Navbar from "../componants/Navbar.svelte"
 </script>
 
 
