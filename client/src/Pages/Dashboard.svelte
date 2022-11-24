@@ -4,6 +4,10 @@ import { onMount } from "svelte"
 import Header from "../componants/header.svelte"
 import Navbar from "../componants/Navbar.svelte"
 import Pagination from "../componants/pagination.svelte"
+
+let element = document.getElementById("Load")
+element.classList.remove("hidden")
+
 let Token = localStorage.getItem("token")
 console.log("token", Token)
 
@@ -14,7 +18,6 @@ onMount(async () => {
   )
   usage = data
   console.log("data", usage)
-  let element = document.getElementById("Load")
   element.classList.add("hidden")
   let element2 = document.getElementById("Dashboard")
   element2.classList.remove("hidden")
