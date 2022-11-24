@@ -1,7 +1,7 @@
 <div class="flex w-1/4 px-5 py-5 lg:w-1/6">
   <nav class="flex-1 space-y-1 border-r border-red-600 pb-4">
     <a
-      href="Dash"
+      href="/Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         class="h-6 w-6 flex-shrink-0 transition-all duration-500 ease-in-out group-hover:scale-125 "
@@ -19,7 +19,7 @@
       <span class=" group-hover:text-red-600">Dashboard</span>
     </a>
     <a
-      href="Publish"
+      href="/Publish"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
       <span class=" group-hover:text-red-600">Publish Document</span>
     </a>
     <a
-      href="Dash"
+      href="/Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@
       <span class=" group-hover:text-red-600">Bulk Upload</span>
     </a>
     <a
-      href="Dash"
+      href="/Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@
       <span class=" group-hover:text-red-600">Documents</span>
     </a>
     <a
-      href="Dash"
+      href="/Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@
       <span class=" group-hover:text-red-600">Recievers</span>
     </a>
     <a
-      href="Dash"
+      href="/Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@
       <span class=" group-hover:text-red-600">Analytics</span>
     </a>
     <a
-      href="Dash"
+      href="/Dash"
       class="group flex items-center gap-2 rounded-md border-red-700 px-2 py-2 text-sm font-medium hover:border-l-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"

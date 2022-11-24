@@ -10,9 +10,9 @@
 <Router {url}>
   <main>
     <Route path="/"><LoginPage /></Route>
-    <Route path="Dash"><Dashboard /></Route>
-    <Route path="Publish"><Publishdoc /></Route>
-    <Route path="/:document" let:params>
+    <Route path="/Dash"><Dashboard /></Route>
+    <Route path="/Publish"><Publishdoc /></Route>
+    <Route path="/user/:document" let:params>
       <AddData document={params.document} />
     </Route>
   </main>
