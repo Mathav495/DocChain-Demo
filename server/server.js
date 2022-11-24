@@ -5,10 +5,12 @@ const morgan = require("morgan")
 const app = express()
 app.use(express.json())
 
-app.use(cors({
-  origin: "http://localhost:8080",
-  methods: ["GET", "POST"]
-}))
+app.use(
+  cors({
+    origin: "http://localhost:8080",
+    methods: ["GET", "POST"],
+  })
+)
 
 app.use(morgan("tiny"))
 
@@ -16,7 +18,7 @@ app.get("/*/*", async (req, res) => {
   try {
     console.log(req.path)
     let url = `https://test.swagger.print2block.in${req.path}`
-    console.log(url);
+    console.log(url)
     const { data } = await axios.get(url)
     if (!data) {
       throw new Error("Data not available")
@@ -32,7 +34,6 @@ app.post("/*/*", async (req, res) => {
   try {
     console.log(req.path)
     let url = `https://test.swagger.print2block.in${req.path}`
-    console.log(url);
     let sampleData = req.body
     const { data } = await axios.post(url, sampleData)
     if (!data) {

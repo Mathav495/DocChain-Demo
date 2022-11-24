@@ -1,26 +1,30 @@
 <script>
-import axios from "axios"
-import { createEventDispatcher } from "svelte"
-const dispatch = createEventDispatcher()
-let Email, password
-const onLogin = async () => {
-  console.log(Email)
-  console.log(password)
+  import axios from "axios"
+  import { createEventDispatcher } from "svelte"
+  import { navigate } from "svelte-routing"
+  const dispatch = createEventDispatcher()
+  let Email, password
+  const onLogin = async () => {
+    console.log(Email)
+    console.log(password)
 
-  let sampleData = {
-    email: Email,
-    password: password,
+    let sampleData = {
+      email: Email,
+      password: password,
+    }
+    const { data } = await axios.post(
+      "http://localhost:5000/auth/login",
+      sampleData
+    )
+    console.log(data)
+    localStorage.setItem("token", data.token)
+    let token = localStorage.getItem("token")
+    console.log(token)
+    if (token) {
+      dispatch("token", token)
+      navigate("/Dash")
+    }
   }
-  const { data } = await axios.post(
-    "http://localhost:5000/auth/login",
-    sampleData
-  )
-  console.log(data)
-  localStorage.setItem("token", data.token)
-  let token = localStorage.getItem("token")
-  console.log(token)
-  dispatch("token", token)
-}
 </script>
 
 <div class=" flex h-screen w-screen items-center justify-center bg-black">
@@ -30,16 +34,16 @@ const onLogin = async () => {
     <div class="flex items-center justify-center">
       <img
         src="\assets\icon1.png"
-        class=" mr-2 inline-block align-top"
+        class=" mr-2 inline-block animate-pulse align-top "
         width="30"
         height="30"
         alt="" />
-      <h1 class="text-2xl font-medium text-gray-300">DocChain</h1>
+      <h1 class="text-2xl font-medium text-white">DocChain</h1>
     </div>
 
     <!-- card -->
 
-    <div class=" rounded-lg bg-red-600 p-2 py-5 shadow-lg ">
+    <div class=" rounded-lg bg-red-600 p-2 py-5 shadow-sm shadow-red-500">
       <h1
         class="flex justify-center pt-4 pb-2 text-2xl font-normal text-gray-300">
         Login to your account
