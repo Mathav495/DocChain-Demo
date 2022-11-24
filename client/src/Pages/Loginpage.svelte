@@ -1,27 +1,32 @@
 <script>
-  import axios from "axios"
-  import { navigate } from "svelte-routing"
-  let Email, password
-  const onLogin = async () => {
-    console.log(Email)
-    console.log(password)
+import axios from "axios"
+import { navigate } from "svelte-routing"
 
-    let sampleData = {
-      email: Email,
-      password: password,
-    }
-    const { data } = await axios.post(
-      "http://localhost:5000/auth/login",
-      sampleData
-    )
-    console.log(data)
-    localStorage.setItem("token", data.token)
-    let token = localStorage.getItem("token")
-    console.log(token)
-    if (token) {
-      navigate("/Dash")
-    }
+let element = document.getElementById("Load")
+element.classList.add("hidden")
+
+let Email, password
+const onLogin = async () => {
+  console.log(Email)
+  console.log(password)
+
+  let sampleData = {
+    email: Email,
+    password: password,
   }
+  const { data } = await axios.post(
+    "http://localhost:5000/auth/login",
+    sampleData
+  )
+  console.log(data)
+  localStorage.setItem("token", data.token)
+  let token = localStorage.getItem("token")
+  console.log(token)
+  if (token) {
+    element.classList.remove("hidden")
+    navigate("/Dash")
+  }
+}
 </script>
 
 <div class=" flex h-screen w-screen items-center justify-center bg-black">
