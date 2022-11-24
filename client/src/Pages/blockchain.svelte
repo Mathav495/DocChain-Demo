@@ -4,6 +4,7 @@
   >
     <img
       class=" object-cover object-center"
+      alt="logo"
       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNi4xNTQiIGhlaWdodD0iMjcuMzY5IiB2aWV3Qm94PSIwIDAgMTYuMTU0IDI3LjM2OSI+CiAgICA8ZGVmcz4KICAgICAgICA8c3R5bGU+CiAgICAgICAgICAgIC5jbHMtMXtmaWxsOiMwMDgzZTN9CiAgICAgICAgPC9zdHlsZT4KICAgIDwvZGVmcz4KICAgIDxwYXRoIGlkPSJMb2dvIiBkPSJNMTI2NjAgNjEyNi4wMjF2LTguNTdsNy45NzktNC4zNjUgOC4xNzYgNC4zNjV2OC41N2wtOC4xNzYgNC4zNDl6bTIuMjk0LTEyLjAyMmExIDEgMCAxIDEgMSAxIDEgMSAwIDAgMS0xLjAwMS0uOTk5em05LTEuNWEuNS41IDAgMSAxIC41LjUuNS41IDAgMCAxLS41MDItLjQ5OXptLTUtNGExLjUgMS41IDAgMSAxIDEuNSAxLjUgMS41IDEuNSAwIDAgMS0xLjQ5OS0xLjQ5OXptMy00YS41LjUgMCAxIDEgLjUuNS41LjUgMCAwIDEtLjQ5OS0uNDk5em0tNC0uNWExIDEgMCAxIDEgMSAxIDEgMSAwIDAgMS0xLjAwMS0uOTk5eiIgY2xhc3M9ImNscy0xIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTI2NjAgLTYxMDMuMDAxKSIvPgo8L3N2Zz4K"
     />
 
@@ -26,7 +27,6 @@
 
   <div class="flex flex-col gap-4 py-28 lg:flex-row">
     <div
-      id="b1"
       class="order-2 flex w-full flex-col space-y-4 px-6 lg:order-none lg:block lg:w-3/5 "
     >
       <img
@@ -80,7 +80,6 @@
 
           <div class="flex flex-col gap-10 lg:hidden">
             <button
-              id="a1"
               value="1"
               onclick="select(value)"
               class="flex  rounded-full border-2 border-white px-3 py-1 text-xs font-medium text-white"
@@ -98,7 +97,7 @@
         </div>
       </div>
 
-      <div id="b2" class=" hidden space-y-3 px-4 py-2 lg:block">
+      <div class=" hidden space-y-3 px-4 py-2 lg:block">
         <div>
           <h1 class="text-base font-normal text-slate-700">Issuer</h1>
           <h1 class="text-lg font-normal text-slate-900">SIDBI (DEMO)</h1>
@@ -114,7 +113,7 @@
           <p
             class="break-all text-lg font-normal leading-relaxed tracking-normal text-slate-900"
           >
-            3763f4a806b1c10e03680553fb35ffc3076b146c5ba0be32a80c5e3553d96811
+            {txid}
           </p>
         </div>
         <div>
@@ -124,7 +123,7 @@
           <p
             class="break-all text-lg font-normal leading-relaxed tracking-normal text-slate-900"
           >
-            91b58e08519fbb26e0775bdab5a04833138e658798270260597414ba00dad8c9
+            {dataHash}
           </p>
         </div>
         <div>
@@ -134,7 +133,7 @@
           <p
             class="break-all text-lg font-normal leading-relaxed tracking-normal text-slate-900"
           >
-            c377c5b4b93d1a9545ea8b826cc25cf455a6f46662d8c7b7960d4d844fc3b968
+            {fileHash}
           </p>
         </div>
 
