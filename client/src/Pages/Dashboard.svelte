@@ -1,19 +1,17 @@
 <script>
-  // import axios from "axios"
-  // import { onMount } from "svelte"
-  import Header from "../componants/header.svelte"
-  import Navbar from "../componants/Navbar.svelte"
-  import Pagination from "../componants/pagination.svelte"
-
-  // export let Token
-  // console.log("token", Token)
-
-  // onMount(async () => {
-  //   const { data } = await axios.get(
-  //     "https://test.swagger.print2block.in/account/usage?from=2022-01-01T00%3A00%3A00Z&to=2022-11-15T00%3A00%3A00Z"
-  //   )
-  //   console.log("data", data)
-  // })
+import axios from "axios"
+import { onMount } from "svelte"
+import Header from "../componants/header.svelte"
+import Navbar from "../componants/Navbar.svelte"
+import Pagination from "../componants/pagination.svelte"
+let Token = localStorage.getItem("token")
+console.log("token", Token)
+onMount(async () => {
+  const { data } = await axios.get(
+    "http://localhost:5000/account/usage?from=2022-01-01T00%3A00%3A00Z&to=2022-11-15T00%3A00%3A00Z"
+  )
+  console.log("data", data)
+})
 </script>
 
 <div class="h-screen w-screen bg-black text-gray-300">
@@ -99,8 +97,95 @@
       <div>
         <div class="mb-3 text-xl">Documents</div>
         <div
-          class="flex h-32 w-full items-end justify-center rounded-md bg-white/10 shadow-sm shadow-red-600">
+          class="flex h-40 w-full items-end justify-center rounded-md bg-white/10 shadow-sm shadow-red-600">
           <Pagination />
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center justify-between">
+          <div class="mb-3 text-xl">Documents Access Log</div>
+          <div class="flex">
+            <div
+              class="flex h-8 w-8 items-center justify-center rounded-l-md border border-gray-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+              </svg>
+            </div>
+            <input
+              class="h-8 w-52 rounded-r-md border border-gray-500 bg-black px-2 outline-none" />
+          </div>
+        </div>
+        <div
+          class="flex w-full flex-col items-start justify-center gap-2 rounded-md bg-white/10 p-5 shadow-sm shadow-red-600">
+          <div class="flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-4 w-4">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+            <p class=" hover:text-red-600">ISSUE (0)</p>
+          </div>
+          <div class="flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-4 w-4">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+            <p class=" hover:text-red-600">VIEW (0)</p>
+          </div>
+          <div class="flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-4 w-4">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+            <p class=" hover:text-red-600">VERIFY (0)</p>
+          </div>
+          <div class="flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-4 w-4">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+            <p class=" hover:text-red-600">DOWNLOAD (0)</p>
+          </div>
         </div>
       </div>
     </div>

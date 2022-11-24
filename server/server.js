@@ -14,12 +14,19 @@ app.use(
 
 app.use(morgan("tiny"))
 
+let Token
 app.get("/*/*", async (req, res) => {
   try {
     console.log(req.path)
-    let url = `https://test.swagger.print2block.in${req.path}`
+    console.log(req.query)
+    console.log("token", Token)
+    let url = `https://test.swagger.print2block.in${req.path}/?from=${req.query.from}&to=${req.query.to}`
     console.log(url)
-    const { data } = await axios.get(url)
+    const { data } = await axios.get(url, {
+      headers: {
+        "x-access-token": Token,
+      },
+    })
     if (!data) {
       throw new Error("Data not available")
     } else {
@@ -36,6 +43,7 @@ app.post("/*/*", async (req, res) => {
     let url = `https://test.swagger.print2block.in${req.path}`
     let sampleData = req.body
     const { data } = await axios.post(url, sampleData)
+    Token = data.token
     if (!data) {
       throw new Error("Data not available")
     } else {
