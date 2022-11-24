@@ -20,9 +20,16 @@
         sample
       );
       console.log(data);
-      localStorage.setItem("docID", data.documentID);
-      let docID = localStorage.getItem("docID");
-      console.log(docID);
+
+      let getData = {
+        docID: data.documentID,
+        sign: data.signature,
+        filehash: data.filehash,
+      };
+      localStorage.setItem("dataKey", JSON.stringify(getData));
+      let doc = localStorage.getItem("dataKey");
+      console.log(doc);
+
       dispatch("push", data);
     }
   };
