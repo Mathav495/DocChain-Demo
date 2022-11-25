@@ -17,22 +17,24 @@
   let dataHash = localStorage.getItem('datahash');
   console.log('datahash', dataHash);
 
-  /**
-   * function to generate 6 digits otp
-   */
-  const generateOTP = () => {
-    // Declare a digits variable
-    // which stores all digits
-    var digits = '0123456789';
-    let OTP = '';
-    for (let i = 0; i < 6; i++) {
-      OTP += digits[Math.floor(Math.random() * 10)];
-    }
-    return OTP;
-  };
-  document.write('OTP of 6 digits: ');
-  document.write(generateOTP());
-  console.log(generateOTP());
+  // /**
+  //  * function to generate 6 digits otp
+  //  */
+  // const generateOTP = () => {
+  //   // Declare a digits variable
+  //   // which stores all digits
+  //   var digits = '0123456789';
+  //   let OTP = '';
+  //   for (let i = 0; i < 6; i++) {
+  //     OTP += digits[Math.floor(Math.random() * 10)];
+  //   }
+  //   return OTP;
+  // };
+  // document.write('OTP of 6 digits: ');
+  // document.write(generateOTP());
+  // console.log(generateOTP());
+
+  // let URL = 'http://localhost:5000/sign/publish';
 
   // publishing documents
   const publishdoc = async () => {
@@ -66,7 +68,7 @@
   <div class="flex flex-row">
     <Navbar />
     <div class="w-3/4 px-5 py-5 lg:w-5/6">
-      <div class="flex h-screen w-screen overflow-hidden">
+      <div class="flex overflow-hidden">
         <div class="flex w-full items-center justify-center bg-black p-5 md:flex-row">
           <div class="overflow-x-auto">
             <table class="text-md w-full text-left text-gray-500 dark:text-gray-400">
@@ -88,7 +90,7 @@
               </thead>
             </table>
 
-            <img src={file} alt="document" class="mx-auto mt-10 h-auto w-auto items-center justify-center rounded-lg shadow-md" />
+            <img src="/assets/images/certificate1.jpeg" alt="document" class="mx-auto mt-10 h-[300px] w-[400px] items-center justify-center rounded-lg object-cover shadow-md" />
 
             <div class="mx-auto mt-10 flex-col items-center justify-center text-center">
               <label for="signature" class="text-md block font-medium text-gray-200 ">signature</label>
