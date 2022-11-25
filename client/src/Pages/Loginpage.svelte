@@ -11,7 +11,6 @@
   const onLogin = async () => {
     console.log(Email)
     console.log(password)
-
     valid = true
     const mail = /\S+@\S+\.\S+/g
     const result1 = mail.test(Email)
@@ -48,7 +47,6 @@
         navigate("/Dash")
       }
     }
-  }
 </script>
 
 <div class=" flex h-screen w-screen items-center justify-center bg-black">

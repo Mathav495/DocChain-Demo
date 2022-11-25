@@ -1,12 +1,12 @@
 <div class="flex flex-row items-center shadow-sm shadow-red-700">
   <div class="flex w-1/4 cursor-pointer justify-start px-5 py-3 lg:w-1/6">
-    <img src="assets\icon3.png" alt="icon" class="animate-pulse" />
+    <img src="/assets/icon3.png" alt="icon" class="animate-pulse" />
     <h1 class="fond-bold text-xl">Docchain.io</h1>
   </div>
   <div class="flex w-3/4 items-center justify-between px-5 py-3 lg:w-5/6">
     <div class="flex flex-row items-center justify-end gap-2">
       <img
-        src="assets\profile.jpg"
+        src="/assets/profile.jpg"
         alt="profile"
         class="h-10 w-10 cursor-pointer rounded-md" />
       <div class="flex flex-col">

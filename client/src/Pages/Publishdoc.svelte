@@ -6,7 +6,7 @@
   const onsubmit = () => {
     console.log(document)
     if (document) {
-      navigate(`/${document}`)
+      navigate(`/user/${document}`)
     }
   }
 </script>

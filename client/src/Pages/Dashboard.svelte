@@ -4,17 +4,28 @@ import { onMount } from "svelte"
 import Header from "../componants/header.svelte"
 import Navbar from "../componants/Navbar.svelte"
 import Pagination from "../componants/pagination.svelte"
+
+let element = document.getElementById("Load")
+element.classList.remove("hidden")
+
 let Token = localStorage.getItem("token")
 console.log("token", Token)
+
+let usage = []
 onMount(async () => {
   const { data } = await axios.get(
     "http://localhost:5000/account/usage?from=2022-01-01T00%3A00%3A00Z&to=2022-11-15T00%3A00%3A00Z"
   )
-  console.log("data", data)
+  usage = data
+  console.log("data", usage)
+  element.classList.add("hidden")
+  let element2 = document.getElementById("Dashboard")
+  element2.classList.remove("hidden")
+  console.log(element)
 })
 </script>
 
-<div class="h-screen w-screen bg-black text-gray-300">
+<div class="hidden h-screen w-screen bg-black text-gray-300" id="Dashboard">
   <Header />
   <div class="flex flex-row">
     <Navbar />
@@ -42,7 +53,9 @@ onMount(async () => {
               </div>
               <div>Documents Issued</div>
             </div>
-            <div class="mx-auto text-3xl text-yellow-600">1000</div>
+            <div class="mx-auto text-3xl text-yellow-600">
+              {usage.initiated}
+            </div>
           </div>
           <div
             class="my-auto w-1/3 rounded-md bg-white/10 py-5 text-center shadow-sm shadow-red-600">
@@ -68,7 +81,7 @@ onMount(async () => {
               </div>
               <div>Documents Viewed</div>
             </div>
-            <div class="mx-auto text-3xl text-blue-600">450</div>
+            <div class="mx-auto text-3xl text-blue-600">{usage.published}</div>
           </div>
           <div
             class="my-auto w-1/3 rounded-md bg-white/10 py-5 text-center shadow-sm shadow-red-600">
@@ -90,7 +103,7 @@ onMount(async () => {
               </div>
               <div>Documents Verified</div>
             </div>
-            <div class="mx-auto text-3xl text-green-600">70</div>
+            <div class="mx-auto text-3xl text-green-600">{usage.revoked}</div>
           </div>
         </div>
       </div>
