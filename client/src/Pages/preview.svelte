@@ -55,7 +55,6 @@
                 <tr>
                   <th scope="col" class="w-80 py-3 px-6"> Name </th>
                   <th scope="col" class="w-32 py-3 px-6"> : </th>
-
                   <th scope="col" class="w-80 py-3 px-6 "> John </th>
                 </tr>
               </thead>
@@ -70,13 +69,11 @@
                 </tr>
               </thead>
             </table>
-
             <img
               src="https://dummyimage.com/300x400"
               alt="document"
               class="mx-auto mt-10 h-auto w-auto items-center justify-center rounded-md"
             />
-
             <div
               class="mx-auto mt-10 flex-col items-center justify-center text-center"
             >
@@ -87,6 +84,7 @@
               >
               <div class="mt-1">
                 <textarea
+                  bind:value={signature}
                   id="signature"
                   name="signature"
                   rows="3"
@@ -95,7 +93,7 @@
                 />
               </div>
             </div>
-            <h1 class="text-md font-semibold text-rose-500">{error}</h1>
+            <!-- <h1 class="text-md font-semibold text-rose-500">{error}</h1> -->
 
             <div class="mx-auto mt-10 flex justify-between">
               <button
@@ -103,6 +101,7 @@
                 >sign</button
               >
               <button
+                href="/blockchain"
                 on:click={publishdoc}
                 class="rounded-lg bg-teal-500 px-6 py-2 text-lg text-white disabled:cursor-not-allowed disabled:bg-teal-200"
                 >publish to blockchain</button
