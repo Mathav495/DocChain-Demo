@@ -21,7 +21,8 @@
     <div class="mt-2">
       <h1 class="mt-2 text-2xl font-normal text-slate-400">Publish Document</h1>
       <h1 class="mt-1 text-lg font-normal text-slate-400">
-        <span class="text-blue-500">Dashboard</span> / Publish Document
+        <a href="/Dash" class="cursor-pointer text-blue-500 ">Dashboard</a> / Publish
+        Document
       </h1>
     </div>
     <div class="ml-auto">
