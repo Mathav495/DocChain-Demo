@@ -13,23 +13,25 @@
 
 <div class="h-screen w-screen bg-black text-gray-300">
   <Header />
-  <div class="flex flex-row">
+
+  <div class="mx-5 flex">
     <Navbar />
-    <div class="w-3/4 px-5 py-5 lg:w-5/6">
-      <h1 class="mb-3 text-xl">Publish Documents</h1>
-      <div>
-        <label for="Doc" class="text-lg text-white"
-          >Choose the document to proceed</label>
-        <div class="mt-4 flex gap-5">
-          <input
-            bind:value={document}
-            type="text"
-            id="Doc"
-            class="w-2/5 text-lg text-slate-400" />
-          <button on:click={onsubmit} class="bg-red-500 p-1 text-white"
-            >Proceed</button>
-        </div>
-      </div>
+    <div class="mt-2">
+      <h1 class="mt-2 text-2xl font-normal text-slate-400">Publish Document</h1>
+      <h1 class="mt-1 text-lg font-normal text-slate-400">
+        <span class="text-blue-500">Dashboard</span> / Publish Document
+      </h1>
+    </div>
+    <div class="ml-auto">
+      <button
+        class=" mt-5 rounded bg-indigo-500 px-2 py-1 text-lg text-white hover:bg-indigo-600"
+        >Add Document Type</button>
+      <button
+        class=" mt-5 rounded bg-green-500 px-2 py-1 text-lg text-white hover:bg-green-600"
+        >Edit Document Type</button>
+      <button
+        class=" mt-5 rounded bg-yellow-500 px-2 py-1 text-lg text-white hover:bg-yellow-600"
+        >Edit Recievers</button>
     </div>
   </div>
 </div>
