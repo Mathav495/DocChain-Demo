@@ -4,7 +4,8 @@
   let element = document.getElementById("Load")
   element.classList.add("hidden")
   let Email = "",
-    password = ""
+    password = "",
+    hidden = true
   let error = {
     Email: "",
     password: "",
@@ -52,7 +53,8 @@
   }
 </script>
 
-<div class=" flex h-screen w-screen items-center justify-center bg-black">
+<div
+  class="relative flex h-screen  w-screen items-center  justify-center  bg-black ">
   <div class="mx-5 flex w-full flex-col gap-8 md:w-1/2 lg:w-1/4">
     <!-- title -->
 
@@ -120,4 +122,35 @@
       </h1>
     </div>
   </div>
+</div>
+<div class="absolute top-10 flex w-full justify-center" class:hidden>
+  <h1
+    class="inline-flex w-11/12 items-center rounded-lg bg-green-600  p-3 text-center text-xl font-normal text-white shadow-sm shadow-white md:w-1/2 lg:w-1/4 ">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="white"
+      class="h-10 w-10">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4.5 12.75l6 6 9-13.5" />
+    </svg>You are now logged out
+    <div class="ml-auto">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="white"
+        class="h-6 w-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+  </h1>
 </div>
