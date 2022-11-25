@@ -1,28 +1,28 @@
 <script>
-import axios from "axios"
-import { onMount } from "svelte"
-import Header from "../componants/header.svelte"
-import Navbar from "../componants/Navbar.svelte"
-import Pagination from "../componants/pagination.svelte"
+  import axios from "axios"
+  import { onMount } from "svelte"
+  import Header from "../componants/header.svelte"
+  import Navbar from "../componants/Navbar.svelte"
+  import Pagination from "../componants/pagination.svelte"
 
-let element = document.getElementById("Load")
-element.classList.remove("hidden")
+  let element = document.getElementById("Load")
+  element.classList.remove("hidden")
 
-let Token = localStorage.getItem("token")
-console.log("token", Token)
+  let Token = localStorage.getItem("token")
+  console.log("token", Token)
 
-let usage = []
-onMount(async () => {
-  const { data } = await axios.get(
-    "http://localhost:5000/account/usage?from=2022-01-01T00%3A00%3A00Z&to=2022-11-15T00%3A00%3A00Z"
-  )
-  usage = data
-  console.log("data", usage)
-  element.classList.add("hidden")
-  let element2 = document.getElementById("Dashboard")
-  element2.classList.remove("hidden")
-  console.log(element)
-})
+  let usage = []
+  onMount(async () => {
+    const { data } = await axios.get(
+      "http://localhost:5000/account/usage?from=2022-01-01T00%3A00%3A00Z&to=2022-11-15T00%3A00%3A00Z"
+    )
+    usage = data
+    console.log("data", usage)
+    element.classList.add("hidden")
+    let element2 = document.getElementById("Dashboard")
+    element2.classList.remove("hidden")
+    console.log(element)
+  })
 </script>
 
 <div class="hidden h-screen w-screen bg-black text-gray-300" id="Dashboard">
