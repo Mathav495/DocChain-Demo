@@ -1,4 +1,4 @@
-<div class="flex w-1/4 px-5 py-5 lg:block lg:w-1/6">
+<div class="flex w-1/4 px-5 py-5 lg:w-1/6">
   <nav class="flex-1 space-y-1 pb-4">
     <a
       href="/Dash"
