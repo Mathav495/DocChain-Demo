@@ -13,7 +13,6 @@ app.use(
 )
 
 app.use(morgan("tiny"))
-
 let Token
 app.get("/*/*", async (req, res) => {
   try {
@@ -40,14 +39,32 @@ app.get("/*/*", async (req, res) => {
 app.post("/*/*", async (req, res) => {
   try {
     console.log(req.path)
-    let url = `https://test.swagger.print2block.in${req.path}`
-    let sampleData = req.body
-    const { data } = await axios.post(url, sampleData)
-    Token = data.token
-    if (!data) {
-      throw new Error("Data not available")
-    } else {
+    let sampleData
+    if(req.path == "/docs/initiate"){
+      let url = `https://test.swagger.print2block.in${req.path}/?qrcode=true`
+      console.log(req.body)
+      sampleData = req.body.name
+      console.log(sampleData);
+      console.log(Token)
+      let { data } = await axios.post(url, {
+        "filename": sampleData
+      },{
+        headers: {
+          "x-access-token" : Token
+        }
+      })
+      console.log(data)
       return res.status(200).json(data)
+    }else{
+      let url = `https://test.swagger.print2block.in${req.path}`
+      sampleData = req.body
+      let { data } = await axios.post(url, sampleData)
+      Token = data.token
+      if (!data) {
+        throw new Error("Data not available")
+      } else {
+        return res.status(200).json(data)
+      }
     }
   } catch {
     res.status(400).json({ message: error.message })

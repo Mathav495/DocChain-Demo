@@ -20,10 +20,12 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.0.0",
+    "svelte-atoms": "^0.0.27",
     "svelte-preprocess": "^4.10.7",
     "tailwindcss": "^3.2.4"
   },
   "dependencies": {
+    "@svelte-parts/drop-file": "^0.0.23",
     "axios": "^1.2.0",
     "sirv-cli": "^2.0.0",
     "svelte-routing": "^1.6.0"

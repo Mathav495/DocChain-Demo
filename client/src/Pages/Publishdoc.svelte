@@ -2,16 +2,19 @@
   import { navigate } from "svelte-routing"
   import Header from "../componants/header.svelte"
   import Navbar from "../componants/Navbar.svelte"
-  let document
+
+  let documentType
+  let element = document.getElementById("Load")
+  element.classList.add("hidden")
   const onsubmit = () => {
-    console.log(document)
-    if (document) {
-      navigate(`/user/${document}`)
+    console.log(documentType)
+    if (documentType) {
+      navigate(`/user/${documentType}`)
     }
   }
 </script>
 
-<div class="h-screen w-screen bg-black text-gray-300">
+<div class=" h-screen w-screen bg-black text-gray-300" id="publish">
   <Header />
   <div class="flex flex-row">
     <Navbar />
@@ -22,7 +25,7 @@
           >Choose the document to proceed</label>
         <div class="mt-4 flex gap-5">
           <input
-            bind:value={document}
+            bind:value={documentType}
             type="text"
             id="Doc"
             class="w-2/5 text-lg text-slate-400" />
