@@ -2,6 +2,11 @@ const express = require("express")
 const axios = require("axios")
 const cors = require("cors")
 const morgan = require("morgan")
+const multer = require("multer")
+
+const upload = multer({
+    dest: "./uploads"
+})
 const app = express()
 app.use(express.json())
 
@@ -11,7 +16,7 @@ app.use(
     methods: ["GET", "POST"],
   })
 )
-
+app.use('/uploads', express.static('uploads'))
 app.use(morgan("tiny"))
 let Token
 app.get("/*/*", async (req, res) => {
@@ -36,18 +41,15 @@ app.get("/*/*", async (req, res) => {
   }
 })
 
-app.post("/*/*", async (req, res) => {
+app.post("/*/*",upload.single('userimage'), async (req, res) => {
   try {
+    console.log("File Details",req.file)
     console.log(req.path)
-    let sampleData
     if(req.path == "/docs/initiate"){
       let url = `https://test.swagger.print2block.in${req.path}/?qrcode=true`
-      console.log(req.body)
-      sampleData = req.body.name
-      console.log(sampleData);
       console.log(Token)
       let { data } = await axios.post(url, {
-        "filename": sampleData
+        "filename": req.file.originalname
       },{
         headers: {
           "x-access-token" : Token
