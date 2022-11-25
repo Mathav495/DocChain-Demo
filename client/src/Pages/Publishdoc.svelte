@@ -4,7 +4,16 @@
   import Navbar from "../componants/Navbar.svelte"
   let element = document.getElementById("Load")
   element.classList.add("hidden")
-  let documentType
+  let documentType,
+    disabled = true
+  const btnDisable = () => {
+    console.log(documentType)
+    if (documentType == "") {
+      disabled = true
+    } else {
+      disabled = false
+    }
+  }
   const onsubmit = () => {
     console.log(documentType)
     if (documentType) {
@@ -36,10 +45,14 @@
         <h1 class="text-xl text-slate-400">Choose the document to proceed</h1>
         <div class="mt-4 flex  gap-5">
           <input
+            bind:value={documentType}
+            on:input={btnDisable}
             type="text"
             class="w-96 rounded border border-gray-300 bg-black bg-opacity-50 px-2 text-lg leading-8  outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500  focus:ring-2 focus:ring-indigo-200" />
           <button
-            class=" flex rounded border-0 bg-red-500 py-1 px-10 text-lg text-white hover:bg-red-600 focus:outline-none"
+            {disabled}
+            on:click={onsubmit}
+            class="flex rounded border-0 bg-red-500 py-1 px-10 text-lg text-white hover:bg-red-600 focus:outline-none disabled:cursor-not-allowed"
             >Proceed</button>
         </div>
       </div>
