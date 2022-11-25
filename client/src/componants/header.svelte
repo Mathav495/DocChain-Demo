@@ -1,9 +1,20 @@
+<script>
+  import { createEventDispatcher } from "svelte"
+  const dispatch = createEventDispatcher()
+  let hidden
+  const logout = () => {
+    hidden = true
+    dispatch("hidden", hidden)
+  }
+</script>
+
 <div class="flex flex-row items-center shadow-sm shadow-red-700">
   <div class="flex w-1/4 cursor-pointer justify-start px-5 py-3 lg:w-1/6">
     <img src="/assets/icon3.png" alt="icon" class="animate-pulse" />
     <h1 class="fond-bold text-xl">Docchain.io</h1>
   </div>
-  <div class="flex w-3/4 items-center justify-between px-5 py-3 lg:w-5/6">
+  <div
+    class="flex w-3/4 items-center justify-end gap-2 px-5 py-3 md:justify-between lg:w-5/6">
     <div class="flex flex-row items-center justify-end gap-2">
       <img
         src="/assets/profile.jpg"
@@ -14,8 +25,8 @@
         <p>User1</p>
       </div>
     </div>
-    <a
-      href="/"
+    <button
+      on:click={logout}
       class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-red-700 hover:text-white">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +40,6 @@
           stroke-linejoin="round"
           d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
       </svg>
-    </a>
+    </button>
   </div>
 </div>
