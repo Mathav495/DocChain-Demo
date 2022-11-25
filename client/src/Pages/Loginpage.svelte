@@ -74,7 +74,7 @@
 
     <!-- card -->
 
-    <div class="rounded-lg bg-red-600 p-2 shadow-sm shadow-white">
+    <div class="rounded-lg bg-white/20 p-2 shadow-sm shadow-red-500">
       <h1
         class="flex justify-center pt-4 pb-2 text-2xl font-normal text-gray-300">
         Login to your account
@@ -127,7 +127,10 @@
     </div>
   </div>
 </div>
-<div class="absolute top-10 flex w-full justify-center" class:hidden>
+<div
+  transition:fly={{ y: 200, duration: 1000 }}
+  class="absolute top-10 flex w-full justify-center"
+  class:hidden>
   <h1
     class="inline-flex w-11/12 items-center rounded-lg bg-green-600  p-3 text-center text-xl font-normal text-white shadow-sm shadow-white md:w-1/2 lg:w-1/4 ">
     <svg
