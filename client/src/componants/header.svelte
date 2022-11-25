@@ -13,7 +13,8 @@
     <img src="/assets/icon3.png" alt="icon" class="animate-pulse" />
     <h1 class="fond-bold text-xl">Docchain.io</h1>
   </div>
-  <div class="flex w-3/4 items-center justify-between px-5 py-3 lg:w-5/6">
+  <div
+    class="flex w-3/4 items-center justify-end gap-2 px-5 py-3 md:justify-between lg:w-5/6">
     <div class="flex flex-row items-center justify-end gap-2">
       <img
         src="/assets/profile.jpg"

@@ -4,13 +4,11 @@
   import Header from "../componants/header.svelte";
   import Navbar from "../componants/Navbar.svelte";
   import Pagination from "../componants/pagination.svelte";
-
   let element = document.getElementById("Load");
   element.classList.remove("hidden");
-
-  let Token = localStorage.getItem("token");
-  console.log("token", Token);
-
+let show = true
+let Token = localStorage.getItem("token")
+console.log("token", Token)
   let usage = [];
   onMount(async () => {
     const { data } = await axios.get(
@@ -25,20 +23,23 @@
   });
 </script>
 
-<div class="hidden h-screen w-screen bg-black text-gray-300" id="Dashboard">
+<div class="hidden w-screen bg-black text-gray-300" id="Dashboard">
   <Header />
   <div class="flex flex-row">
-    <Navbar />
-    <div class="w-3/4 space-y-5 px-5 py-5 lg:w-5/6">
+    <div class="flex w-1/5 px-5 py-5 lg:w-1/6">
+      {#if show}
+        <Navbar />
+      {/if}
+    </div>
+    <div class="w-4/5 space-y-5 px-5 py-5 lg:w-5/6">
       <div>
-        <div class="mb-3 text-xl">Dashboard</div>
-        <div class="flex space-x-5">
+        <div class="mb-3 text-lg md:text-xl">Dashboard</div>
+        <div class="flex space-x-2 md:space-x-5">
           <div
             class="my-auto w-1/3 rounded-md bg-white/10 py-5 text-center shadow-sm shadow-red-600"
           >
             <div
-              class="flex flex-row items-center justify-center gap-2 text-xl"
-            >
+              class="flex flex-row items-center justify-center gap-1 p-1 lg:gap-3">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +47,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="h-10 w-10 text-yellow-600"
-                >
+                  class="h-5 w-5 text-yellow-600 md:h-8 md:w-8 lg:h-10 lg:w-10">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -55,9 +55,9 @@
                   />
                 </svg>
               </div>
-              <div>Documents Issued</div>
+              <div class="text-xs md:text-lg ">Documents Issued</div>
             </div>
-            <div class="mx-auto text-3xl text-yellow-600">
+            <div class="mx-auto text-xl text-yellow-600 md:text-3xl">
               {usage.initiated}
             </div>
           </div>
@@ -65,8 +65,7 @@
             class="my-auto w-1/3 rounded-md bg-white/10 py-5 text-center shadow-sm shadow-red-600"
           >
             <div
-              class="flex flex-row items-center justify-center gap-2 text-xl"
-            >
+              class="flex flex-row items-center justify-center gap-1 p-1 lg:gap-3">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -74,8 +73,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="h-10 w-10 text-blue-600"
-                >
+                  class="h-5 w-5 text-blue-600 md:h-8 md:w-8 lg:h-10 lg:w-10">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -88,16 +86,17 @@
                   />
                 </svg>
               </div>
-              <div>Documents Viewed</div>
+              <div class="text-xs md:text-lg">Documents Viewed</div>
             </div>
-            <div class="mx-auto text-3xl text-blue-600">{usage.published}</div>
+            <div class="mx-auto text-xl text-blue-600 md:text-3xl">
+              {usage.published}
+            </div>
           </div>
           <div
             class="my-auto w-1/3 rounded-md bg-white/10 py-5 text-center shadow-sm shadow-red-600"
           >
             <div
-              class="flex flex-row items-center justify-center gap-2 text-xl"
-            >
+              class="flex flex-row items-center justify-center gap-1 p-1 lg:gap-3">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,8 +104,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="h-10 w-10 text-green-600"
-                >
+                  class="h-5 w-5 text-green-600 md:h-8 md:w-8 lg:h-10 lg:w-10">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -114,23 +112,24 @@
                   />
                 </svg>
               </div>
-              <div>Documents Verified</div>
+              <div class="text-xs md:text-lg">Documents Verified</div>
             </div>
-            <div class="mx-auto text-3xl text-green-600">{usage.revoked}</div>
+            <div class="mx-auto text-xl text-green-600 md:text-3xl">
+              {usage.revoked}
+            </div>
           </div>
         </div>
       </div>
       <div>
-        <div class="mb-3 text-xl">Documents</div>
+        <div class="mb-3 text-lg md:text-xl">Documents</div>
         <div
-          class="flex h-40 w-full items-end justify-center rounded-md bg-white/10 shadow-sm shadow-red-600"
-        >
+          class="flex h-44 w-full items-end justify-center rounded-md bg-white/10 shadow-sm shadow-red-600">
           <Pagination />
         </div>
       </div>
       <div>
-        <div class="flex items-center justify-between">
-          <div class="mb-3 text-xl">Documents Access Log</div>
+        <div class="items-center justify-between md:flex">
+          <div class="mb-3 text-lg md:text-xl">Documents Access Log</div>
           <div class="flex">
             <div
               class="flex h-8 w-8 items-center justify-center rounded-l-md border border-gray-500"
@@ -151,8 +150,7 @@
               </svg>
             </div>
             <input
-              class="h-8 w-52 rounded-r-md border border-gray-500 bg-black px-2 outline-none"
-            />
+              class="mb-2 h-8 w-40 rounded-r-md border border-gray-500 bg-black px-2 outline-none md:mb-0 md:w-52" />
           </div>
         </div>
         <div
@@ -173,7 +171,7 @@
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"
               />
             </svg>
-            <p class=" hover:text-red-600">ISSUE (0)</p>
+            <p class="text-xs hover:text-red-600 md:text-sm">ISSUE (0)</p>
           </div>
           <div class="flex items-center">
             <svg
@@ -190,7 +188,7 @@
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"
               />
             </svg>
-            <p class=" hover:text-red-600">VIEW (0)</p>
+            <p class="text-xs hover:text-red-600 md:text-sm">VIEW (0)</p>
           </div>
           <div class="flex items-center">
             <svg
@@ -207,7 +205,7 @@
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"
               />
             </svg>
-            <p class=" hover:text-red-600">VERIFY (0)</p>
+            <p class="text-xs hover:text-red-600 md:text-sm">VERIFY (0)</p>
           </div>
           <div class="flex items-center">
             <svg
@@ -224,7 +222,7 @@
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"
               />
             </svg>
-            <p class=" hover:text-red-600">DOWNLOAD (0)</p>
+            <p class="text-xs hover:text-red-600 md:text-sm">DOWNLOAD (0)</p>
           </div>
         </div>
       </div>
