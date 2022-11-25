@@ -1,6 +1,8 @@
 <script>
   import axios from "axios"
   import { navigate } from "svelte-routing"
+  let element = document.getElementById("Load")
+  element.classList.add("hidden")
   let Email = "",
     password = ""
   let error = {
@@ -47,6 +49,7 @@
         navigate("/Dash")
       }
     }
+  }
 </script>
 
 <div class=" flex h-screen w-screen items-center justify-center bg-black">

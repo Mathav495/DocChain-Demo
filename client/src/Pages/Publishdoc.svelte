@@ -2,11 +2,13 @@
   import { navigate } from "svelte-routing"
   import Header from "../componants/header.svelte"
   import Navbar from "../componants/Navbar.svelte"
-  let document
+  let element = document.getElementById("Load")
+  element.classList.add("hidden")
+  let documentType
   const onsubmit = () => {
-    console.log(document)
-    if (document) {
-      navigate(`/user/${document}`)
+    console.log(documentType)
+    if (documentType) {
+      navigate(`/user/${documentType}`)
     }
   }
 </script>
