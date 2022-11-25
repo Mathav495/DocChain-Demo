@@ -1,23 +1,26 @@
 <script>
   import Header from "../componants/header.svelte";
   import Navbar from "../componants/Navbar.svelte";
-  import Axios from "axios";
-  import { createEventDispatcher } from "svelte";
+  import axios from "axios";
+  import { createEventDispatcher, onMount } from "svelte";
   const dispatch = createEventDispatcher();
-  let documentID,
-    signature,
-    // disabled = false,
-    error = "";
+  let documentID, signature, filehash;
+  // disabled = false,
+  error = "";
+
+  let Token = localStorage.getItem("token");
+  console.log("token", Token);
 
   const publishdoc = async () => {
-    if (signature == null) {
+    if (signature == "") {
       error = "signature can't be empty";
+      console.log(error);
     } else {
       const sample = {
         documentID: documentID,
         signature: signature,
       };
-      const { data } = await Axios.post(
+      const { data } = await axios.post(
         "http://localhost:5000/docs/publish",
         sample
       );
@@ -71,7 +74,7 @@
             <img
               src="https://dummyimage.com/300x400"
               alt="document"
-              class="mx-auto mt-10 items-center justify-center rounded-md"
+              class="mx-auto mt-10 h-auto w-auto items-center justify-center rounded-md"
             />
 
             <div
