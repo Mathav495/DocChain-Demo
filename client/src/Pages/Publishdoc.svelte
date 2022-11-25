@@ -1,14 +1,15 @@
 <script>
-  import { navigate } from "svelte-routing"
-  import Header from "../componants/header.svelte"
-  import Navbar from "../componants/Navbar.svelte"
-  let document
-  const onsubmit = () => {
-    console.log(document)
-    if (document) {
-      navigate(`/user/${document}`)
-    }
+import { navigate } from "svelte-routing"
+import Header from "../componants/header.svelte"
+import Navbar from "../componants/Navbar.svelte"
+
+let document
+const onsubmit = () => {
+  console.log(document)
+  if (document) {
+    navigate(`/user/${document}`)
   }
+}
 </script>
 
 <div class="h-screen w-screen bg-black text-gray-300">
